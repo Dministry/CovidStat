@@ -4,8 +4,8 @@
     <h1>COVID-19 STATISTICS</h1>
     <hr />
     <div class="container">
-      <div class="row">
-        <div class="col-4">
+      <div class="grid-row">
+        <div class="col">
           <h2>COVID-19 GLOBAL</h2>
           <ul>
             <li class="global">New Confirmed: {{ cases.NewConfirmed }}</li>
@@ -18,7 +18,7 @@
         <!-- <div class="col-4" v-for="(value, index) in base" :key="index">
           {{ value }}
         </div> -->
-        <div class="col-8">
+        <div class="col">
           <h2>COVID-19 NIGERIA</h2>
           <div class="flex-display">
             <div class="card">
@@ -66,22 +66,35 @@
       </div>
     </div>
     <div id="option">
-      <h2>Corona Virus Cases Worldwide</h2>
-      <select id="" v-model="country">
-        <option
-          v-for="(county, index) in countries"
-          :key="index"
-          :value="county.Slug"
-        >
-          {{ county.Country }}
-        </option> </select
-      ><br />
-      <button @click="getCountry" class="btn btn-primary">
-        Get Covid-19 Data
-      </button>
-      <h1>Total Confirmed Cases: {{ confirmedx }}</h1>
-      <h1>Total Recovered Cases {{ recoveredx }}</h1>
-      <h1>Total Deaths Cases: {{ deathx }}</h1>
+      <table id="container" class="table table-light">
+        <h2>Corona Virus Cases Worldwide</h2>
+        <select id="" v-model="country">
+          <option
+            v-for="(county, index) in countries"
+            :key="index"
+            :value="county.Slug"
+          >
+            {{ county.Country }}
+          </option> </select
+        ><br />
+        <button @click="getCountry" class="btn btn-primary">
+          Get Covid-19 Data
+        </button>
+        <thead>
+          <tr>
+            <th scope="col">Confirmed Cases</th>
+            <th scope="col">Recovered Cases</th>
+            <th scope="col">Death Cases</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ confirmedx }}</td>
+            <td>{{ recoveredx }}</td>
+            <td>{{ deathx }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -160,6 +173,7 @@ export default {
 <style scoped>
 * {
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 .global {
   background-color: #ff0000;
@@ -217,5 +231,92 @@ div.header4 {
 
 div.container {
   padding: 10px;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+table {
+  background-image: linear-gradient(
+    rgba(246, 247, 248, 0.267),
+    rgba(174, 235, 182, 0.164)
+  );
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 16px;
+  transition: all 0.3s ease-in;
+
+  @media (max-width: 512px) {
+    padding: 320px;
+    transition: all 0.3s ease-in;
+  }
+
+  @media (max-width: 360px) {
+    padding: 16px;
+    transition: all 0.3s ease-in;
+  }
+}
+#container {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: rgba(87, 172, 211, 0.5);
+  padding: 64px;
+  box-shadow: 2px 2px 50px #111;
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
+  @media (max-width: 512px) {
+    padding: 32px;
+    transition: all 0.3s ease-in;
+  }
+  @media (max-width: 360px) {
+    padding: 16px;
+    transition: all 0.3s ease-in;
+  }
+}
+h1 {
+  text-align: center;
+  color: rgb(143, 27, 37);
+  margin: 0 0 16px 0;
+  line-height: 2;
+  font-size: xx-large;
+}
+.container {
+  max-width: 1335px;
+  margin: 0 auto;
+}
+.grid-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.grid-item {
+  height: 550px;
+  flex-basis: 20%;
+  -ms-flex: auto;
+  width: 259px;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+  @media (max-width: 1333px) {
+    .grid-item {
+      flex-basis: 33.33%;
+    }
+  }
+  @media (max-width: 1073px) {
+    .grid-item {
+      flex-basis: 33.33%;
+    }
+  }
+  @media (max-width: 815px) {
+    .grid-item {
+      flex-basis: 50%;
+    }
+  }
+  @media (max-width: 555px) {
+    .grid-item {
+      flex-basis: 100%;
+    }
+  }
 }
 </style>
