@@ -4,23 +4,17 @@
     <h1>COVID-19 STATISTICS</h1>
     <hr />
     <div class="container">
-      <div class="grid-row">
-        <table class="col">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        <div class="col">
           <h2>COVID-19 GLOBAL</h2>
-          <thead>
-            <tr>
-              <th class="global">New Confirmed: {{ cases.NewConfirmed }}</th>
-              <th class="global">
-                Total Confirmed: {{ cases.TotalConfirmed }}
-              </th>
-              <th class="global">Total Deaths: {{ cases.TotalDeaths }}</th>
-              <th class="global">
-                Total Recovered: {{ cases.TotalRecovered }}
-              </th>
-              <!-- <button href="" @click="handleClick()">Click me</button> -->
-            </tr>
-          </thead>
-        </table>
+          <ul>
+            <li class="global">New Confirmed: {{ cases.NewConfirmed }}</li>
+            <li class="global">Total Confirmed: {{ cases.TotalConfirmed }}</li>
+            <li class="global">Total Deaths: {{ cases.TotalDeaths }}</li>
+            <li class="global">Total Recovered: {{ cases.TotalRecovered }}</li>
+            <!-- <button href="" @click="handleClick()">Click me</button> -->
+          </ul>
+        </div>
         <!-- <div class="col-4" v-for="(value, index) in base" :key="index">
           {{ value }}
         </div> -->
@@ -74,6 +68,7 @@
     <div id="option">
       <table id="container" class="table table-light">
         <h2>Corona Virus Cases Worldwide</h2>
+        <label for="country">Select Country below:</label>
         <select id="" v-model="country">
           <option
             v-for="(county, index) in countries"
@@ -95,9 +90,9 @@
         </thead>
         <tbody>
           <tr>
-            <td class="num">{{ confirmedx }}</td>
-            <td class="num">{{ recoveredx }}</td>
-            <td class="num">{{ deathx }}</td>
+            <td>{{ confirmedx }}</td>
+            <td>{{ recoveredx }}</td>
+            <td>{{ deathx }}</td>
           </tr>
         </tbody>
       </table>
@@ -182,7 +177,7 @@ export default {
   box-sizing: border-box;
 }
 .global {
-  /* background-color: #ff0000; */
+  background-color: #ff0000;
   border-radius: 8px;
   line-height: 4;
   background-image: linear-gradient(#971010a9, #c0bfbf8e);
@@ -196,14 +191,15 @@ ul > li {
   font-weight: 600;
 }
 .flex-display {
-  display: flex;
+  display: inline-flex;
 }
 div.card {
   width: 250px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
-  margin-right: 2em;
+  margin-right: 0.5em;
   border-radius: 6px;
+  display: inline-flex;
 }
 
 div.header {
@@ -286,46 +282,5 @@ h1 {
   margin: 0 0 16px 0;
   line-height: 2;
   font-size: xx-large;
-}
-.container {
-  max-width: 1335px;
-  margin: 0 auto;
-}
-.grid-row {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-}
-.grid-item {
-  height: 550px;
-  flex-basis: 20%;
-  -ms-flex: auto;
-  width: 259px;
-  position: relative;
-  padding: 10px;
-  box-sizing: border-box;
-  @media (max-width: 1333px) {
-    .grid-item {
-      flex-basis: 33.33%;
-    }
-  }
-  @media (max-width: 1073px) {
-    .grid-item {
-      flex-basis: 33.33%;
-    }
-  }
-  @media (max-width: 815px) {
-    .grid-item {
-      flex-basis: 50%;
-    }
-  }
-  @media (max-width: 555px) {
-    .grid-item {
-      flex-basis: 100%;
-    }
-  }
-}
-.num {
-  margin-right: 1em;
 }
 </style>
