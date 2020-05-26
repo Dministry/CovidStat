@@ -102,7 +102,7 @@
           </tr>
         </tbody>
       </table>
-      <small style="paddind-top: 6px;">(c)Dminstry. valueCreation</small>
+      <small>(c)Dminstry. valueCreation</small>
     </div>
   </div>
 </template>
@@ -306,7 +306,8 @@ h1 {
   font-size: xx-large;
 }
 .tabd {
-  padding-right: 6em;
+  padding-right: 5em;
+  padding-left: 2em;
 }
 h4 {
   font-weight: 600;
