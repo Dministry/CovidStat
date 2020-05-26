@@ -96,9 +96,9 @@
         </thead>
         <tbody>
           <tr>
-            <td>{{ confirmedx }}</td>
-            <td>{{ recoveredx }}</td>
-            <td>{{ deathx }}</td>
+            <td class="tabd">{{ confirmedx }}</td>
+            <td class="tabd">{{ recoveredx }}</td>
+            <td class="tabd">{{ deathx }}</td>
           </tr>
         </tbody>
       </table>
@@ -306,5 +306,8 @@ h1 {
   margin: 0 0 16px 0;
   line-height: 2;
   font-size: xx-large;
+}
+.tabd {
+  padding-right: 6em;
 }
 </style>
