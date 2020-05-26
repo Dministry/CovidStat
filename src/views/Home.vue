@@ -5,16 +5,22 @@
     <hr />
     <div class="container">
       <div class="grid-row">
-        <div class="col">
+        <table class="col">
           <h2>COVID-19 GLOBAL</h2>
-          <ul>
-            <li class="global">New Confirmed: {{ cases.NewConfirmed }}</li>
-            <li class="global">Total Confirmed: {{ cases.TotalConfirmed }}</li>
-            <li class="global">Total Deaths: {{ cases.TotalDeaths }}</li>
-            <li class="global">Total Recovered: {{ cases.TotalRecovered }}</li>
-            <!-- <button href="" @click="handleClick()">Click me</button> -->
-          </ul>
-        </div>
+          <thead>
+            <tr>
+              <th class="global">New Confirmed: {{ cases.NewConfirmed }}</th>
+              <th class="global">
+                Total Confirmed: {{ cases.TotalConfirmed }}
+              </th>
+              <th class="global">Total Deaths: {{ cases.TotalDeaths }}</th>
+              <th class="global">
+                Total Recovered: {{ cases.TotalRecovered }}
+              </th>
+              <!-- <button href="" @click="handleClick()">Click me</button> -->
+            </tr>
+          </thead>
+        </table>
         <!-- <div class="col-4" v-for="(value, index) in base" :key="index">
           {{ value }}
         </div> -->
@@ -89,9 +95,9 @@
         </thead>
         <tbody>
           <tr>
-            <td>{{ confirmedx }}</td>
-            <td>{{ recoveredx }}</td>
-            <td>{{ deathx }}</td>
+            <td class="num">{{ confirmedx }}</td>
+            <td class="num">{{ recoveredx }}</td>
+            <td class="num">{{ deathx }}</td>
           </tr>
         </tbody>
       </table>
@@ -176,7 +182,7 @@ export default {
   box-sizing: border-box;
 }
 .global {
-  background-color: #ff0000;
+  /* background-color: #ff0000; */
   border-radius: 8px;
   line-height: 4;
   background-image: linear-gradient(#971010a9, #c0bfbf8e);
@@ -318,5 +324,8 @@ h1 {
       flex-basis: 100%;
     }
   }
+}
+.num {
+  margin-right: 1em;
 }
 </style>
