@@ -101,8 +101,8 @@
             <td class="tabd">{{ deathx }}</td>
           </tr>
         </tbody>
-        <small style="paddind-top: 6px;">(c)Dminstry. valueCreation</small>
       </table>
+      <small style="paddind-top: 6px;">(c)Dminstry. valueCreation</small>
     </div>
   </div>
 </template>
