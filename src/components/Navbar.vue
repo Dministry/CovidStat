@@ -5,6 +5,8 @@
         <div class="bg-success p-4">
           <h5 class="text-white h4">Covid-19 Statistics</h5>
           <span class="text-white">Get latest Statistics of Covid-19 here</span>
+          <br /><span>Email: dministry356@gmail.com</span><br />
+          <span>Tel: +234-070-30-5371-99</span>
         </div>
       </div>
       <nav class="navbar navbar-dark bg-dark">

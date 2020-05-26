@@ -4,23 +4,29 @@
     <h1>COVID-19 STATISTICS</h1>
     <hr />
     <div class="container">
-      <div class="row">
-        <div class="col-12 mx-2 my-2 justify-content-center col-lg-3">
+      <div class="row" id="container2">
+        <div class="col-12 mx-2 my-2 justify-content-center col-lg-3 col-xs-3">
           <h2>COVID-19 GLOBAL</h2>
           <ul>
-            <li class="global">New Confirmed: {{ cases.NewConfirmed }}</li>
-            <li class="global">Total Confirmed: {{ cases.TotalConfirmed }}</li>
-            <li class="global">Total Deaths: {{ cases.TotalDeaths }}</li>
-            <li class="global">Total Recovered: {{ cases.TotalRecovered }}</li>
+            <li class="global">
+              New Confirmed: <br />{{ cases.NewConfirmed }}
+            </li>
+            <li class="global">
+              Total Confirmed: <br />{{ cases.TotalConfirmed }}
+            </li>
+            <li class="global">Total Deaths: <br />{{ cases.TotalDeaths }}</li>
+            <li class="global">
+              Total Recovered: <br />{{ cases.TotalRecovered }}
+            </li>
             <!-- <button href="" @click="handleClick()">Click me</button> -->
           </ul>
         </div>
         <!-- <div class="col-4" v-for="(value, index) in base" :key="index">
           {{ value }}
         </div> -->
-        <div class="col-12 mx-2 my-2 justify-content-center col-lg-8">
+        <div class="col-12 mx-2 my-2 justify-content-center col-lg-8 col-xs-8">
           <h2>COVID-19 NIGERIA</h2>
-          <div class="flex-display">
+          <div id="card">
             <div class="card">
               <div class="header">
                 <font-awesome-icon icon="viruses" />
@@ -179,28 +185,30 @@ export default {
 .global {
   background-color: #ff0000;
   border-radius: 8px;
-  line-height: 4;
+  line-height: 2;
   background-image: linear-gradient(#971010a9, #c0bfbf8e);
   /* border: 1px solid red; */
 }
 ul > li {
   list-style: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  color: white;
+  color: rgb(218, 216, 216);
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-}
-.flex-display {
-  display: flex;
+  font-weight: 500;
 }
 div.card {
-  width: 250px;
+  max-width: 48vmax;
+  min-width: 22vmin;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-  margin-right: 2em;
+  margin: 0.5em 0.2em;
   border-radius: 6px;
+  display: flex;
 }
-
+#card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+}
 div.header {
   background-color: #2196f3;
   color: white;
@@ -259,7 +267,24 @@ table {
   }
 }
 #container {
-  max-width: 480px;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: rgba(87, 172, 211, 0.5);
+  padding: 64px;
+  box-shadow: 2px 2px 50px #111;
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
+  @media (max-width: 512px) {
+    padding: 32px;
+    transition: all 0.3s ease-in;
+  }
+  @media (max-width: 360px) {
+    padding: 16px;
+    transition: all 0.3s ease-in;
+  }
+}
+#container2 {
+  max-width: 1080px;
   margin: 0 auto;
   background-color: rgba(87, 172, 211, 0.5);
   padding: 64px;
