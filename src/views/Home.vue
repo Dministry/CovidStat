@@ -312,4 +312,10 @@ h1 {
 h4 {
   font-weight: 600;
 }
+select {
+  border-radius: 16px 16px 0px 0px;
+  height: 6vh;
+  border: transparent;
+  background-color: rgb(236, 245, 247);
+}
 </style>
