@@ -6,8 +6,8 @@
     <div class="container">
       <div class="row" id="container2">
         <div class="col-12 mx-2 my-2 justify-content-center col-lg-3 col-xs-3">
-          <h2>COVID-19 GLOBAL</h2>
-          <ul>
+          <h4>GLOBAL</h4>
+          <ul id="globe">
             <li class="global">
               New Confirmed: <br />{{ cases.NewConfirmed }}
             </li>
@@ -25,7 +25,7 @@
           {{ value }}
         </div> -->
         <div class="col-12 mx-2 my-2 justify-content-center col-lg-8 col-xs-8">
-          <h2>COVID-19 NIGERIA</h2>
+          <h4>NIGERIA</h4>
           <div id="card">
             <div class="card">
               <div class="header">
@@ -182,17 +182,14 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
-.global {
-  background-color: #ff0000;
+#globe {
+  background-color: #0d9636a9;
   border-radius: 8px;
-  line-height: 2;
-  background-image: linear-gradient(#971010a9, #c0bfbf8e);
-  /* border: 1px solid red; */
+  padding-left: 0;
 }
 ul > li {
   list-style: none;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  color: rgb(218, 216, 216);
+  color: rgb(247, 244, 244);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
 }
