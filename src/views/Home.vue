@@ -307,4 +307,7 @@ h1 {
 .tabd {
   padding-right: 6em;
 }
+h4 {
+  font-weight: 600;
+}
 </style>
