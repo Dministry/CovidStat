@@ -18,7 +18,7 @@
         <!-- <div class="col-4" v-for="(value, index) in base" :key="index">
           {{ value }}
         </div> -->
-        <div class="col-12 mx-2 my-2 justify-content-center col-lg-3">
+        <div class="col-12 mx-2 my-2 justify-content-center col-lg-8">
           <h2>COVID-19 NIGERIA</h2>
           <div class="flex-display">
             <div class="card">
